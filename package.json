@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "commit": "npx git-cz",
     "test:watch": "jest --watch",
-    "prepublish": "ng build ngx-bdir && ncp ./projects/ngx-bdir/src/lib/styles ./dist/ngx-bdir/styles"
+    "prepublish": "ng build ngx-bdir && ncp ./projects/ngx-bdir/src/lib/styles ./dist/ngx-bdir/"
   },
   "private": true,
   "dependencies": {

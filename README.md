@@ -49,7 +49,7 @@ install with npm:
 3.  Start using `scss mixins`:
     ```scss
 
-    @import "~ngx-bdir/styles/bdir.mixins";
+    @import "~ngx-bdir/mixins";
     h1 {
       color: darkslategray;
       @include padding-start(20px);
