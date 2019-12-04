@@ -100,13 +100,17 @@ install with npm:
 
 **`*$encapsulation`** property used for inner components to be affected by their host's direction by using angular's [:host-context](https://angular.io/guide/component-styles#host-context)
 
-`padding-start($padding, $encapsulation: true)`
+`padding-start($value, $encapsulation: true)`
 
-`padding-end($padding, $encapsulation: true)`
+`padding-end($value, $encapsulation: true)`
 
-`margin-start($margin, $encapsulation: true)`
+`margin-start($value, $encapsulation: true)`
 
-`margin-end($margin, $encapsulation: true)`
+`margin-end($value, $encapsulation: true)`
+
+`border-start($value, $encapsulation: true)`
+
+`border-end($value, $encapsulation: true)`
 
 `float($start: true, $encapsulation: true)`
 
