@@ -49,7 +49,7 @@ install with npm:
 3.  Start using `scss mixins`:
     ```scss
 
-    @import "~ngx-bdir/styles/bdir.mixins";
+    @import "~ngx-bdir/mixins";
     h1 {
       color: darkslategray;
       @include padding-start(20px);
@@ -100,13 +100,13 @@ install with npm:
 
 **`*$encapsulation`** property used for inner components to be affected by their host's direction by using angular's [:host-context](https://angular.io/guide/component-styles#host-context)
 
-`padding-start($padding, $encapsulation: true)`
+`padding-start($value, $encapsulation: true)`
 
-`padding-end($padding, $encapsulation: true)`
+`padding-end($value, $encapsulation: true)`
 
-`margin-start($margin, $encapsulation: true)`
+`margin-start($value, $encapsulation: true)`
 
-`margin-end($margin, $encapsulation: true)`
+`margin-end($value, $encapsulation: true)`
 
 `float($start: true, $encapsulation: true)`
 

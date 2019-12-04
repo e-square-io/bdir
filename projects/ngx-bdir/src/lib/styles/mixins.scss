@@ -1,19 +1,19 @@
 @import 'utils.mixins';
 
-@mixin padding-start($padding, $encapsulation: true) {
-  @include property-horizontal-bdir(padding, $padding, $encapsulation);
+@mixin padding-start($value, $encapsulation: true) {
+  @include property-horizontal-bdir(padding, $value, $encapsulation);
 }
 
-@mixin padding-end($padding, $encapsulation: true) {
-  @include property-horizontal-bdir(padding, $padding, $encapsulation, false);
+@mixin padding-end($value, $encapsulation: true) {
+  @include property-horizontal-bdir(padding, $value, $encapsulation, false);
 }
 
-@mixin margin-start($margin, $encapsulation: true) {
-  @include property-horizontal-bdir(margin, $margin, $encapsulation);
+@mixin margin-start($value, $encapsulation: true) {
+  @include property-horizontal-bdir(margin, $value, $encapsulation);
 }
 
-@mixin margin-end($margin, $encapsulation: true) {
-  @include property-horizontal-bdir(margin, $margin, $encapsulation, false);
+@mixin margin-end($value, $encapsulation: true) {
+  @include property-horizontal-bdir(margin, $value, $encapsulation, false);
 }
 
 @mixin float($start: true, $encapsulation: true) {
