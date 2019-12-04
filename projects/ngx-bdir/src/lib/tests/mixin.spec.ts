@@ -5,7 +5,7 @@ describe('mixins test', () => {
     return sass
       .renderSync({
         data: `
-        @import 'projects/ngx-bdir/src/lib/styles/bdir.mixins.scss';
+        @import 'projects/ngx-bdir/src/lib/styles/mixins.scss';
         ${source}
       `
       })

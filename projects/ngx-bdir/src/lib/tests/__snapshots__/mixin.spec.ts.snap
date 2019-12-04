@@ -2,10 +2,10 @@
 
 exports[`mixins test should create an rtl ltr support for dir without encapsulation 1`] = `
 "*[dir=ltr] div {
-  dir: left; }
+  direction: left; }
 
 *[dir=rtl] div {
-  dir: right; }
+  direction: right; }
 "
 `;
 

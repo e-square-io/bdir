@@ -21,7 +21,7 @@
 }
 
 @mixin dir($start: true, $encapsulation: true) {
-  @include value-bdir(dir, $start, $encapsulation);
+  @include value-bdir(direction, $start, $encapsulation);
 }
 
 @mixin start($value, $encapsulation: true) {
