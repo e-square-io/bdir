@@ -5,12 +5,22 @@ describe('mixins test', () => {
     return sass
       .renderSync({
         data: `
-        @import 'projects/ngx-bdir/src/lib/styles/bdir.mixins.scss';
+        @import 'projects/ngx-bdir/src/lib/styles/mixins.scss';
         ${source}
       `
       })
       .css.toString();
   }
+
+  it('should create an rtl ltr support for border end', () => {
+    const source = `
+      h1 {
+        @include border-end(1px solid black);
+      }
+    `;
+    const css = setup(source);
+    expect(css).toMatchSnapshot();
+  });
 
   it('should create an rtl ltr support for margin end', () => {
     const source = `

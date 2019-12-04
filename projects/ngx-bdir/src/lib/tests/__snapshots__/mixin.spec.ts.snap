@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mixins test should create an rtl ltr support for border end 1`] = `
+":host-context(*[dir=ltr]) h1 {
+  border-right: 1px solid black; }
+
+:host-context(*[dir=rtl]) h1 {
+  border-left: 1px solid black; }
+"
+`;
+
 exports[`mixins test should create an rtl ltr support for dir without encapsulation 1`] = `
 "*[dir=ltr] div {
   dir: left; }
