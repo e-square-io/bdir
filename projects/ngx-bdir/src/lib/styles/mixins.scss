@@ -16,6 +16,14 @@
   @include property-horizontal-bdir(margin, $value, $encapsulation, false);
 }
 
+@mixin border-start($value, $encapsulation: true) {
+  @include property-horizontal-bdir(border, $value, $encapsulation);
+}
+
+@mixin border-end($value, $encapsulation: true) {
+  @include property-horizontal-bdir(border, $value, $encapsulation, false);
+}
+
 @mixin float($start: true, $encapsulation: true) {
   @include value-bdir(float, $start, $encapsulation);
 }

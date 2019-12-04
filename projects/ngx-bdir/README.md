@@ -108,6 +108,10 @@ install with npm:
 
 `margin-end($value, $encapsulation: true)`
 
+`border-start($value, $encapsulation: true)`
+
+`border-end($value, $encapsulation: true)`
+
 `float($start: true, $encapsulation: true)`
 
 `dir($start: true, $encapsulation: true)`
