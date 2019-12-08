@@ -85,13 +85,13 @@ install with npm:
 
 `oppositeDirChanges: Observable<Direction>` - A multicasting observable that emits the opposite direction on direction change.
 
-#### Tokens:
+### Tokens
 `RTL_LANGUAGES` - Define which language will consider as `rtl` languages, default value: `['he', 'ar', 'hy', 'dv', 'ff', 'ku', 'fa']`.
 
 `DEFAULT_LANG` - Define the default language, default value: `'en'`
 
 ### BDirDirective
-`bdir: 'start' | 'end'` - Will set a `dir` attribute to the hosting element with `rtl | ltr` value accordingly `start`, is the default value.
+`bdir: 'start' | 'end'` - Will set a `dir` attribute to the hosting element with `rtl | ltr` value accordingly. `start` is the default value.
 ```angular2html
   <element bdir="start"></element>
 ```
