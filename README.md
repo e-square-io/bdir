@@ -71,27 +71,30 @@ install with npm:
 
 ## API
 
-#### BDirService
-##### Methods:
-*`setLang(lang: Lang)` - Setting the current language which will determine the direction value
+### BDirService
+#### Methods:
+`setLang(lang: Language)` - Setting the current language which will determine the direction value
 
-*`setDir(dir: Direction)` - Set the current direction value.
+`setDir(dir: Direction)` - Set the current direction value.
 
-*`getDir$(): Observable<Direction>` - Get the current direction value as observable.
+`getDir(): Direction` - Get the current direction value.
 
-*`setLang(lang: Lang)` - Get the opposite direction value as observable.
+`getOppositeDir(): Direction` - Get the opposite direction value.
 
-#### BDirDirective
-`bdir: 'start' | 'end'` - Will set a `dir` attribute to the hosting element with `rtl | ltr` value accordingly `start`, is the default value.
-```angular2html
-  <element bdir="start"></element>
-```
+`dirChanges: Observable<Direction>` - A multicasting observable that emits the direction on direction change.
 
-#### Tokens
+`oppositeDirChanges: Observable<Direction>` - A multicasting observable that emits the opposite direction on direction change.
+
+#### Tokens:
 `RTL_LANGUAGES` - Define which language will consider as `rtl` languages, default value: `['he', 'ar', 'hy', 'dv', 'ff', 'ku', 'fa']`.
 
 `DEFAULT_LANG` - Define the default language, default value: `'en'`
 
+### BDirDirective
+`bdir: 'start' | 'end'` - Will set a `dir` attribute to the hosting element with `rtl | ltr` value accordingly `start`, is the default value.
+```angular2html
+  <element bdir="start"></element>
+```
 
 #### Mixins
 >All `mixins` were written following to the `css` syntax, simply change **left** & **right** with **start** & **end**.
