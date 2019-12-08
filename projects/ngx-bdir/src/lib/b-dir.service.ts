@@ -1,20 +1,25 @@
-import { Injectable, Inject, Optional } from '@angular/core';
+import { Injectable, Inject, Optional, EventEmitter } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Direction, Language, DEFAULT_LANGUAGE } from './b-dir.models';
+import { map, share, shareReplay } from 'rxjs/operators';
+import { Direction, Language, DEFAULT_LANGUAGE, IDirection } from './b-dir.models';
 import { RTL_LANGUAGES, DEFAULT_LANG } from './b-dir.tokens';
 
+export const mapToOppositeDir = () => map((dir: Direction) => (dir === Direction.rtl ? Direction.ltr : Direction.rtl));
 @Injectable()
 export class BDirService {
   private currentDir: Direction;
-  private currentDir$: BehaviorSubject<Direction>;
+
+  /**  A multicasting observable that emits the direction every time it changes */
+  readonly dirChanges: Observable<Direction> = new EventEmitter();
+
+  /**  A multicasting observable that emits the opposite direction every time the direction changes */
+  readonly oppositeDirChanges: Observable<Direction> = this.dirChanges.pipe(mapToOppositeDir(), share());
 
   constructor(
     @Inject(RTL_LANGUAGES) private rtlLangs: Language[],
     @Optional() @Inject(DEFAULT_LANG) defaultLang: Language = DEFAULT_LANGUAGE
   ) {
-    this.currentDir = this.getDirByLang(defaultLang);
-    this.currentDir$ = new BehaviorSubject(this.currentDir);
+    this.setDir(this.getDirByLang(defaultLang));
   }
 
   /**
@@ -27,28 +32,28 @@ export class BDirService {
   /**
    * Set the current direction value.
    */
-  setDir(dir: Direction): void {
+  setDir(dir: Direction | keyof typeof Direction): void {
     if (dir !== this.currentDir) {
-      this.currentDir = dir;
-      this.currentDir$.next(dir);
+      this.currentDir = dir as Direction;
+      (this.dirChanges as EventEmitter<Direction>).emit(this.currentDir);
     }
   }
 
   /**
-   * get the current direction value as observable.
+   * @returns the current direction value as string.
    */
-  getDir$(): Observable<Direction> {
-    return this.currentDir$.asObservable();
+  getDir(): Direction {
+    return this.currentDir;
   }
 
   /**
-   * get the opposite direction value as observable.
+   * @returns the opposite direction value as string.
    */
-  getOppositeDir$(): Observable<Direction> {
-    return this.getDir$().pipe(map(dir => (dir === Direction.Rtl ? Direction.Ltr : Direction.Rtl)));
+  getOppositeDir(): Direction {
+    return this.currentDir === Direction.rtl ? Direction.ltr : Direction.rtl;
   }
 
   private getDirByLang(lang: Language): Direction {
-    return this.rtlLangs.includes(lang) ? Direction.Rtl : Direction.Ltr;
+    return this.rtlLangs.includes(lang) ? Direction.rtl : Direction.ltr;
   }
 }

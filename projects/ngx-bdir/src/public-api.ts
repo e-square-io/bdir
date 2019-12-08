@@ -5,3 +5,5 @@
 export * from './lib/b-dir.service';
 // export * from './lib/ngx-bdir.component';
 export * from './lib/b-dir.module';
+
+export { Language, Direction, Position } from './lib/b-dir.models';

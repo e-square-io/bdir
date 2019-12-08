@@ -2,14 +2,16 @@
 export type Language = string;
 
 export enum Direction {
-  Rtl = 'rtl',
-  Ltr = 'ltr'
+  rtl = 'rtl',
+  ltr = 'ltr'
 }
 
 export enum Position {
   Start = 'start',
   End = 'end'
 }
+
+export type IDirection = Direction;
 
 export const DEFAULT_LANGUAGE: Language = 'en';
 
