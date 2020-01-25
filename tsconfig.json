@@ -19,11 +19,8 @@
       "dom"
     ],
     "paths": {
-      "ngx-bdir": [
-        "dist/ngx-bdir"
-      ],
-      "ngx-bdir/*": [
-        "dist/ngx-bdir/*"
+      "@e-square/bdir": [
+        "dist/bdir"
       ]
     }
   }

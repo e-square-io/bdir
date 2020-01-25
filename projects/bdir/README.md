@@ -1,4 +1,4 @@
-# Ngx-Bdir
+# @e-square/bdir
 A bidirectional support lib for angular
 
 ## Project policies and statuses
@@ -14,7 +14,7 @@ A bidirectional support lib for angular
 
 install with npm:
 
-```npm install ngx-bdir --save```
+```npm install @e-square/bdir --save```
 
 ### Usage
 
@@ -23,7 +23,7 @@ install with npm:
     ```ts
     import {BrowserModule} from '@angular/platform-browser';
     import {NgModule} from '@angular/core';
-    import { BDirModule } from 'ngx-bdir';
+    import { BDirModule } from '@e-square/bdir';
     
     @NgModule({
         imports: [
@@ -49,7 +49,7 @@ install with npm:
 3.  Start using `scss mixins`:
     ```scss
 
-    @import "~ngx-bdir/mixins";
+    @import "~@e-square/bdir/mixins";
     h1 {
       color: darkslategray;
       @include padding-start(20px);
