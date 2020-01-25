@@ -1,18 +1,17 @@
 {
-  "name": "ngx-bdir",
+  "name": "@e-square/bdir",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "build": "ng build ngx-bdir",
+    "build": "ng build bdir",
     "test": "jest",
     "test:ci": "jest --coverage --ci",
     "test:badges": "npm run test:ci  && jest-coverage-badges",
     "lint": "ng lint",
     "commit": "npx git-cz",
     "test:watch": "jest --watch",
-    "prepublish": "ng build ngx-bdir && ncp ./projects/ngx-bdir/src/lib/styles ./dist/ngx-bdir/"
+    "prepublish": "ng build bdir && ncp ./projects/bdir/src/lib/styles ./dist/bdir/"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",

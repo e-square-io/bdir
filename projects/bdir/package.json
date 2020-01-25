@@ -1,8 +1,8 @@
 {
-  "name": "ngx-bdir",
+  "name": "@e-square/bdir",
   "version": "0.0.2",
   "description": "A bidirectional support library for angular",
-  "homepage": "https://github.com/10bis/ngx-bdir#readme",
+  "homepage": "https://github.com/e-square/bdir#readme",
   "keywords": [
     "Angular",
     "bdir",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/10bis/ngx-bdir.git"
+    "url": "git+https://github.com/e-square/bdir.git"
   },
   "license": "MIT",
   "sideEffects": false

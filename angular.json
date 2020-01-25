@@ -3,25 +3,25 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-bdir": {
-      "root": "projects/ngx-bdir",
-      "sourceRoot": "projects/ngx-bdir/src",
+    "bdir": {
+      "root": "projects/bdir",
+      "sourceRoot": "projects/bdir/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ngx-bdir/tsconfig.lib.json",
-            "project": "projects/ngx-bdir/ng-package.json"
+            "tsConfig": "projects/bdir/tsconfig.lib.json",
+            "project": "projects/bdir/ng-package.json"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngx-bdir/tsconfig.lib.json",
-              "projects/ngx-bdir/tsconfig.spec.json"
+              "projects/bdir/tsconfig.lib.json",
+              "projects/bdir/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -31,5 +31,5 @@
       }
     }
   },
-  "defaultProject": "ngx-bdir"
+  "defaultProject": "bdir"
 }
