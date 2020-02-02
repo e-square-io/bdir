@@ -5,7 +5,9 @@ import { Direction, Language, DEFAULT_LANGUAGE, IDirection } from './b-dir.model
 import { RTL_LANGUAGES, DEFAULT_LANG } from './b-dir.tokens';
 
 export const mapToOppositeDir = () => map((dir: Direction) => (dir === Direction.rtl ? Direction.ltr : Direction.rtl));
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class BDirService {
   private currentDir: Direction;
 
