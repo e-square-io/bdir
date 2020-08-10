@@ -4,14 +4,16 @@ $dirs: (
     opposite-dir: rtl,
     start: left,
     end: right,
-    transform-dir: 1
+    transform-dir: 1,
+    rotate-dir: 0
   ),
   rtl: (
     dir: rtl,
     opposite-dir: ltr,
     start: right,
     end: left,
-    transform-dir: -1
+    transform-dir: -1,
+    rotate-dir: -180
   )
 );
 
@@ -63,10 +65,25 @@ $dirs: (
   }
 }
 
-@mixin transform-bdir($prop, $x, $y, $encapsulation: true, $dirs: $dirs) {
+@mixin transform-bdir($prop, $values, $encapsulation: true, $dirs: $dirs) {
   @each $key, $map in $dirs {
+    $transformValues: '';
+    @for $i from 1 through length($values) {
+      $value: nth($values, $i);
+
+      @if ($i == 1) {
+        @if ($prop == rotate) {
+          $transformValues: $value + map_get($map, rotate-dir);
+        } @else {
+          $transformValues: $value * map_get($map, transform-dir);
+        }
+      } @else {
+        $transformValues: $transformValues + ', ' + $value;
+      }
+    }
+
     @include encapsulation($encapsulation, '*[dir=#{map_get($map, dir)}]') {
-      transform: #{$prop + '(' + $x * map_get($map, transform-dir) + ',' + $y + ')'};
+      transform: #{$prop + '(' + $transformValues + ')'};
     }
   }
 }

@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mixins test should create an encapsulated content 1`] = `
+":host-context(.test) h1 {
+  height: 10px; }
+"
+`;
+
 exports[`mixins test should create an rtl ltr support for border end 1`] = `
 ":host-context(*[dir=ltr]) h1 {
   border-right: 1px solid black; }
@@ -9,21 +15,12 @@ exports[`mixins test should create an rtl ltr support for border end 1`] = `
 "
 `;
 
-exports[`mixins test should create an rtl ltr support for dir without encapsulation 1`] = `
-"*[dir=ltr] div {
+exports[`mixins test should create an rtl ltr support for dir 1`] = `
+":host-context(*[dir=ltr]) div {
   direction: left; }
 
-*[dir=rtl] div {
+:host-context(*[dir=rtl]) div {
   direction: right; }
-"
-`;
-
-exports[`mixins test should create an rtl ltr support for end (right / left) positioning without encapsulation 1`] = `
-"*[dir=ltr] div {
-  right: 20%; }
-
-*[dir=rtl] div {
-  left: 20%; }
 "
 `;
 
@@ -45,21 +42,12 @@ exports[`mixins test should create an rtl ltr support for margin end 1`] = `
 "
 `;
 
-exports[`mixins test should create an rtl ltr support for mirroring without encapsulation 1`] = `
-"*[dir=ltr] div {
-  transform: scale(1,1); }
+exports[`mixins test should create an rtl ltr support for mirroring 1`] = `
+":host-context(*[dir=ltr]) div {
+  transform: scale(1, 1); }
 
-*[dir=rtl] div {
-  transform: scale(-1,1); }
-"
-`;
-
-exports[`mixins test should create an rtl ltr support for padding end without encapsulation 1`] = `
-"*[dir=ltr] h1 {
-  padding-right: 20px; }
-
-*[dir=rtl] h1 {
-  padding-left: 20px; }
+:host-context(*[dir=rtl]) div {
+  transform: scale(-1, 1); }
 "
 `;
 
@@ -72,6 +60,24 @@ exports[`mixins test should create an rtl ltr support for padding start 1`] = `
 "
 `;
 
+exports[`mixins test should create an rtl ltr support for rotating 1`] = `
+":host-context(*[dir=ltr]) div {
+  transform: rotate(45deg); }
+
+:host-context(*[dir=rtl]) div {
+  transform: rotate(-135deg); }
+"
+`;
+
+exports[`mixins test should create an rtl ltr support for scaling 1`] = `
+":host-context(*[dir=ltr]) div {
+  transform: scale(5px, 5px); }
+
+:host-context(*[dir=rtl]) div {
+  transform: scale(-5px, 5px); }
+"
+`;
+
 exports[`mixins test should create an rtl ltr support for start (left / right) positioning 1`] = `
 ":host-context(*[dir=ltr]) div {
   left: 40px; }
@@ -81,11 +87,11 @@ exports[`mixins test should create an rtl ltr support for start (left / right) p
 "
 `;
 
-exports[`mixins test should create an rtl ltr support for translating  1`] = `
+exports[`mixins test should create an rtl ltr support for translating 1`] = `
 ":host-context(*[dir=ltr]) div {
-  transform: translate(5px,5px); }
+  transform: translate(5px, 5px); }
 
 :host-context(*[dir=rtl]) div {
-  transform: translate(-5px,5px); }
+  transform: translate(-5px, 5px); }
 "
 `;

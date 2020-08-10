@@ -121,6 +121,8 @@ install with npm:
 
 `transformTranslate($x, $y: 0, $encapsulation: true)`
 
+`transformRotate($deg, $encapsulation: true)`
+
 `transformScale($x, $y: 1, $encapsulation: true)`
 
 `mirror($encapsulation: true)`

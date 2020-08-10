@@ -12,6 +12,18 @@ describe('mixins test', () => {
       .css.toString();
   }
 
+  it('should create an encapsulated content', function() {
+    const source = `
+      h1 {
+        @include encapsulation(true, '.test') {
+          height: 10px;
+        };
+      }
+    `;
+    const css = setup(source);
+    expect(css).toMatchSnapshot();
+  });
+
   it('should create an rtl ltr support for border end', () => {
     const source = `
       h1 {
@@ -42,16 +54,6 @@ describe('mixins test', () => {
     expect(css).toMatchSnapshot();
   });
 
-  it('should create an rtl ltr support for padding end without encapsulation', () => {
-    const source = `
-      h1 {
-        @include padding-end(20px, false);
-      }
-    `;
-    const css = setup(source);
-    expect(css).toMatchSnapshot();
-  });
-
   it('should create an rtl ltr support for float', () => {
     const source = `
       div {
@@ -62,10 +64,10 @@ describe('mixins test', () => {
     expect(css).toMatchSnapshot();
   });
 
-  it('should create an rtl ltr support for dir without encapsulation', () => {
+  it('should create an rtl ltr support for dir', () => {
     const source = `
       div {
-        @include dir(true, false);
+        @include dir(true);
       }
     `;
     const css = setup(source);
@@ -82,17 +84,7 @@ describe('mixins test', () => {
     expect(css).toMatchSnapshot();
   });
 
-  it('should create an rtl ltr support for end (right / left) positioning without encapsulation', () => {
-    const source = `
-      div {
-        @include end(20%, false);
-      }
-    `;
-    const css = setup(source);
-    expect(css).toMatchSnapshot();
-  });
-
-  it('should create an rtl ltr support for translating ', () => {
+  it('should create an rtl ltr support for translating', () => {
     const source = `
       div {
         @include transformTranslate(5px, 5px);
@@ -102,10 +94,30 @@ describe('mixins test', () => {
     expect(css).toMatchSnapshot();
   });
 
-  it('should create an rtl ltr support for mirroring without encapsulation', () => {
+  it('should create an rtl ltr support for scaling', () => {
     const source = `
       div {
-        @include mirror(false);
+        @include transformScale(5px, 5px);
+      }
+    `;
+    const css = setup(source);
+    expect(css).toMatchSnapshot();
+  });
+
+  it('should create an rtl ltr support for mirroring', () => {
+    const source = `
+      div {
+        @include mirror();
+      }
+    `;
+    const css = setup(source);
+    expect(css).toMatchSnapshot();
+  });
+
+  it('should create an rtl ltr support for rotating', () => {
+    const source = `
+      div {
+        @include transformRotate(45deg);
       }
     `;
     const css = setup(source);

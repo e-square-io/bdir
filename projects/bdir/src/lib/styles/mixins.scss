@@ -41,13 +41,17 @@
 }
 
 @mixin transformTranslate($x, $y: 0, $encapsulation: true) {
-  @include transform-bdir(translate, $x, $y, $encapsulation);
+  @include transform-bdir(translate, ($x, $y), $encapsulation);
 }
 
 @mixin transformScale($x, $y: 1, $encapsulation: true) {
-  @include transform-bdir(scale, $x, $y, $encapsulation);
+  @include transform-bdir(scale, ($x, $y), $encapsulation);
+}
+
+@mixin transformRotate($deg, $encapsulation: true) {
+  @include transform-bdir(rotate, ($deg), $encapsulation);
 }
 
 @mixin mirror($encapsulation: true) {
-  @include transform-bdir(scale, 1, 1, $encapsulation);
+  @include transform-bdir(scale, (1, 1), $encapsulation);
 }
