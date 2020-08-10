@@ -1,6 +1,6 @@
 {
   "name": "@e-square/bdir",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A bidirectional support library for angular",
   "homepage": "https://github.com/e-square-io/bdir#readme",
   "keywords": [
@@ -19,5 +19,8 @@
     "type": "git",
     "url": "git+https://github.com/e-square-io/bdir.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
 }

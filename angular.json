@@ -15,7 +15,12 @@
             "tsConfig": "projects/bdir/tsconfig.lib.json",
             "project": "projects/bdir/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/bdir/tsconfig.lib.prod.json"
+            }
+          }
+},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
