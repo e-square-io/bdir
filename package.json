@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "build": "ng build bdir && ncp ./projects/bdir/src/lib/styles ./dist/bdir/",
+    "build": "ng build bdir --prod && ncp ./projects/bdir/src/lib/styles ./dist/bdir/",
     "test": "jest",
     "test:ci": "jest --ci",
     "lint": "ng lint",
