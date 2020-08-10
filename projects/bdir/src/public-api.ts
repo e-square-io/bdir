@@ -4,5 +4,6 @@
 
 export * from './lib/b-dir.service';
 export * from './lib/b-dir.module';
+export * from './lib/b-dir.directive';
 
 export { Language, Direction, Position } from './lib/b-dir.models';

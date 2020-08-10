@@ -5,7 +5,6 @@ import { BDirDirective } from './b-dir.directive';
 
 @NgModule({
   declarations: [BDirDirective],
-  imports: [],
   exports: [BDirDirective],
   providers: [
     { provide: RTL_LANGUAGES, useValue: RTL_LANGUAGES_LIST }
