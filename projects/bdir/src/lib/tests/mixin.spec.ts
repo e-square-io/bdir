@@ -12,7 +12,7 @@ describe('mixins test', () => {
       .css.toString();
   }
 
-  it('should create an encapsulated content', function() {
+  it('should create an encapsulated content', () => {
     const source = `
       h1 {
         @include encapsulation(true, '.test') {
@@ -28,6 +28,60 @@ describe('mixins test', () => {
     const source = `
       h1 {
         @include border-end(1px solid black);
+      }
+    `;
+    const css = setup(source);
+    expect(css).toMatchSnapshot();
+  });
+
+  it('should create an rtl ltr support for border-radius', () => {
+    const source = `
+      h1 {
+        @include border-radius(0 2px 2px 0);
+      }
+
+      h2 {
+        @include border-radius(4px 2px);
+      }
+
+      h3 {
+        @include border-radius(4px 2px 5px);
+      }
+
+      h4 {
+        @include border-radius(4px, true, false);
+      }
+
+      h5 {
+        @include border-radius(4px 2px, false);
+      }
+    `;
+    const css = setup(source);
+    expect(css).toMatchSnapshot();
+  });
+
+  it('should create an rtl ltr support for border-radius-start', () => {
+    const source = `
+      h1 {
+        @include border-radius-start(2px);
+      }
+
+      h2 {
+        @include border-radius-start(2px, 4px, false);
+      }
+    `;
+    const css = setup(source);
+    expect(css).toMatchSnapshot();
+  });
+
+  it('should create an rtl ltr support for border-radius-end', () => {
+    const source = `
+      h1 {
+        @include border-radius-end(2px);
+      }
+
+      h2 {
+        @include border-radius-end(2px, 4px, false);
       }
     `;
     const css = setup(source);

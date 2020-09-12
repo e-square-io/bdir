@@ -24,6 +24,35 @@
   @include property-horizontal-bdir(border, $value, $encapsulation, false);
 }
 
+@mixin border-radius($values...) {
+  $encapsulation: true;
+  $start: true;
+
+  @if(length($values) >= 2) {
+    $last: nth($values, length($values));
+    $beforeLast: nth($values, length($values) - 1);
+
+    $encapsulation: if(type-of($last) == bool, $last, $encapsulation);
+
+    @if(type-of($beforeLast) == bool) {
+      $encapsulation: $beforeLast;
+      $start: if(type-of($last) == bool, $last, $start);
+    }
+  }
+
+  $values: remove($values, true, true);
+  $values: remove($values, false, true);
+  @include inverse-values-bdir(border-radius, $encapsulation, $start, $values);
+}
+
+@mixin border-radius-start($top, $bottom: $top, $encapsulation: true) {
+  @include border-radius($top $bottom, $encapsulation);
+}
+
+@mixin border-radius-end($top, $bottom: $top, $encapsulation: true) {
+  @include border-radius($top $bottom, $encapsulation, false);
+}
+
 @mixin float($start: true, $encapsulation: true) {
   @include value-bdir(float, $start, $encapsulation);
 }

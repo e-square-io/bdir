@@ -1,6 +1,6 @@
 {
   "name": "@e-square/bdir",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A bidirectional support library for angular",
   "homepage": "https://github.com/e-square-io/bdir#readme",
   "keywords": [
@@ -12,8 +12,8 @@
     "ltr"
   ],
   "peerDependencies": {
-    "@angular/common": "^8.2.0",
-    "@angular/core": "^8.2.0"
+    "@angular/common": "^10.0.0",
+    "@angular/core": "^10.0.0"
   },
   "repository": {
     "type": "git",

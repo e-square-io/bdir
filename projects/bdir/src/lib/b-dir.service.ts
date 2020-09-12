@@ -1,27 +1,49 @@
 import { Injectable, Inject, Optional, EventEmitter } from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
-import { map, share, shareReplay } from 'rxjs/operators';
-import { Direction, Language, DEFAULT_LANGUAGE, IDirection } from './b-dir.models';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map, share } from 'rxjs/operators';
+import { Language, DEFAULT_LANGUAGE } from './b-dir.models';
 import { RTL_LANGUAGES, DEFAULT_LANG } from './b-dir.tokens';
+import { Direction, Directionality } from '@angular/cdk/bidi';
+import { DOCUMENT } from '@angular/common';
 
-export const mapToOppositeDir = () => map((dir: Direction) => (dir === Direction.rtl ? Direction.ltr : Direction.rtl));
+export const mapOppositeDir = (dir: Direction): Direction => dir === 'rtl' ? 'ltr' : 'rtl';
+
+export const mapToOppositeDir = () => map(mapOppositeDir);
+
 @Injectable({
   providedIn: 'root'
 })
-export class BDirService {
+export class BDirService extends Directionality {
+  /** @deprecated use value instead */
   private currentDir: Direction;
+  private _value: Direction;
 
-  /**  A multicasting observable that emits the direction every time it changes */
-  readonly dirChanges: Observable<Direction> = new EventEmitter();
+
+  /**
+   * A multicasting observable that emits the direction every time it changes
+   * @deprecated use change instead
+   */
+  readonly dirChanges: Observable<Direction> = this.change;
 
   /**  A multicasting observable that emits the opposite direction every time the direction changes */
-  readonly oppositeDirChanges: Observable<Direction> = this.dirChanges.pipe(mapToOppositeDir(), share());
+  readonly oppositeDirChanges: Observable<Direction> = this.change.pipe(mapToOppositeDir(), share());
+
+  get value(): Direction {
+    return this._value;
+  }
+
+  set value(value) {
+    this._value = value;
+  }
 
   constructor(
     @Inject(RTL_LANGUAGES) private rtlLangs: Language[],
-    @Optional() @Inject(DEFAULT_LANG) defaultLang: Language = DEFAULT_LANGUAGE
+    @Inject(DEFAULT_LANG) defaultLang: Language,
+    @Optional() @Inject(DOCUMENT) doc?: any
   ) {
-    this.setDir(this.getDirByLang(defaultLang));
+    super(doc);
+
+    this.setLang(defaultLang);
   }
 
   /**
@@ -34,28 +56,28 @@ export class BDirService {
   /**
    * Set the current direction value.
    */
-  setDir(dir: Direction | keyof typeof Direction): void {
-    if (dir !== this.currentDir) {
-      this.currentDir = dir as Direction;
-      (this.dirChanges as EventEmitter<Direction>).emit(this.currentDir);
+  setDir(dir: Direction): void {
+    if (dir !== this.value) {
+      this.value = dir;
+      this.change.emit(this.value);
     }
   }
 
   /**
-   * @returns the current direction value as string.
+   * @deprecated use value instead
    */
   getDir(): Direction {
-    return this.currentDir;
+    return this.value;
   }
 
   /**
    * @returns the opposite direction value as string.
    */
   getOppositeDir(): Direction {
-    return this.currentDir === Direction.rtl ? Direction.ltr : Direction.rtl;
+    return mapOppositeDir(this.value);
   }
 
   private getDirByLang(lang: Language): Direction {
-    return this.rtlLangs.includes(lang) ? Direction.rtl : Direction.ltr;
+    return this.rtlLangs.includes(lang) ? 'rtl' : 'ltr';
   }
 }

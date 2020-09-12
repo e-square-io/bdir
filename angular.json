@@ -14,13 +14,13 @@
           "options": {
             "tsConfig": "projects/bdir/tsconfig.lib.json",
             "project": "projects/bdir/ng-package.json"
-          }
-        ,          "configurations": {
+          },
+          "configurations": {
             "production": {
               "tsConfig": "projects/bdir/tsconfig.lib.prod.json"
             }
           }
-},
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -36,5 +36,8 @@
       }
     }
   },
-  "defaultProject": "bdir"
+  "defaultProject": "bdir",
+  "cli": {
+    "analytics": false
+  }
 }

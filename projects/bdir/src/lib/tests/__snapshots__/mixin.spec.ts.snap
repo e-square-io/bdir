@@ -15,6 +15,66 @@ exports[`mixins test should create an rtl ltr support for border end 1`] = `
 "
 `;
 
+exports[`mixins test should create an rtl ltr support for border-radius 1`] = `
+":host-context(*[dir=ltr]) h1 {
+  border-radius: 0 2px 2px 0; }
+
+:host-context(*[dir=rtl]) h1 {
+  border-radius: 2px 0 0 2px; }
+
+:host-context(*[dir=ltr]) h2 {
+  border-radius: 4px 0 0 2px; }
+
+:host-context(*[dir=rtl]) h2 {
+  border-radius: 0 4px 2px 0; }
+
+h3 {
+  border-radius: 4px 2px 5px; }
+
+:host-context(*[dir=ltr]) h4 {
+  border-radius: 0 4px 4px 0; }
+
+:host-context(*[dir=rtl]) h4 {
+  border-radius: 4px 0 0 4px; }
+
+*[dir=ltr] h5 {
+  border-radius: 4px 0 0 2px; }
+
+*[dir=rtl] h5 {
+  border-radius: 0 4px 2px 0; }
+"
+`;
+
+exports[`mixins test should create an rtl ltr support for border-radius-end 1`] = `
+":host-context(*[dir=ltr]) h1 {
+  border-radius: 0 2px 2px 0; }
+
+:host-context(*[dir=rtl]) h1 {
+  border-radius: 2px 0 0 2px; }
+
+*[dir=ltr] h2 {
+  border-radius: 0 2px 4px 0; }
+
+*[dir=rtl] h2 {
+  border-radius: 2px 0 0 4px; }
+"
+`;
+
+exports[`mixins test should create an rtl ltr support for border-radius-start 1`] = `
+":host-context(*[dir=ltr]) h1 {
+  border-radius: 2px 0 0 2px; }
+
+:host-context(*[dir=rtl]) h1 {
+  border-radius: 0 2px 2px 0; }
+
+*[dir=ltr] h2 {
+  border-radius: 2px 0 0 4px; }
+
+*[dir=rtl] h2 {
+  border-radius: 0 2px 4px 0; }
+"
+`;
+
 exports[`mixins test should create an rtl ltr support for dir 1`] = `
 ":host-context(*[dir=ltr]) div {
   direction: left; }

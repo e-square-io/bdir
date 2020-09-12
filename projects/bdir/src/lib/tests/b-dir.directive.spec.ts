@@ -1,18 +1,33 @@
-import { Component, DebugElement } from '@angular/core';
+import { Component, DebugElement, EventEmitter, Output } from '@angular/core';
 import { TestBed, ComponentFixture, async, ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BDirDirective } from '../b-dir.directive';
 import { RTL_LANGUAGES_LIST, Position } from '../b-dir.models';
 import { BDirService } from '../b-dir.service';
 import { RTL_LANGUAGES } from '../b-dir.tokens';
+import { Direction, Directionality } from '@angular/cdk/bidi';
+import { startWith } from 'rxjs/operators';
+
+@Component({
+  selector: 'bdir-child',
+  template: `
+    <div></div>
+  `
+})
+class ChildTestComponent {
+  @Output() dir = this._dir.change;
+
+  constructor(private _dir: Directionality) {}
+}
 
 @Component({
   template: `
-    <div [bdir]="pos"></div>
+    <div [bdir]="pos"><bdir-child (dir)="dir = $event"></bdir-child></div>
   `
 })
 class TestDirComponent {
   pos: Position = null;
+  dir: Direction;
 }
 
 describe('BdirDirective', () => {
@@ -22,7 +37,7 @@ describe('BdirDirective', () => {
   let bdirDirectiveInstance: BDirDirective;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TestDirComponent, BDirDirective],
+      declarations: [TestDirComponent, ChildTestComponent, BDirDirective],
       providers: [
         BDirService,
         { provide: RTL_LANGUAGES, useValue: RTL_LANGUAGES_LIST }
@@ -35,26 +50,28 @@ describe('BdirDirective', () => {
   });
 
   it('should create a div with default direction when none provided', () => {
-    expect(bdirDirectiveInstance.bdir).toEqual(undefined);
+    expect(bdirDirectiveInstance.position).toEqual('start');
     fixture.detectChanges();
     expect(dirElem.attributes.dir).toEqual('ltr');
-    expect(bdirDirectiveInstance.bdir).toEqual('start');
+    expect(bdirDirectiveInstance.value).toEqual('ltr');
+    expect(component.dir).toEqual('ltr');
   });
 
   it('should create a div with default direction when start provided', () => {
-    component.pos = Position.Start;
+    component.pos = 'start';
     fixture.detectChanges();
-    const DirElem = fixture.debugElement.query(By.directive(BDirDirective));
-    expect(DirElem.attributes.dir).toEqual('ltr');
-    expect(bdirDirectiveInstance.bdir).toEqual('start');
+    expect(dirElem.attributes.dir).toEqual('ltr');
+    expect(bdirDirectiveInstance.value).toEqual('ltr');
+    expect(component.dir).toEqual('ltr');
+    expect(bdirDirectiveInstance.position).toEqual('start');
   });
 
   it('should create a div with opposite direction when end provided', () => {
-    // enabling auto detect in order to cover ngOnChanges code
-    fixture.autoDetectChanges(true);
-    component.pos = Position.End;
+    component.pos = 'end';
     fixture.detectChanges();
     expect(dirElem.attributes.dir).toEqual('rtl');
-    expect(bdirDirectiveInstance.bdir).toEqual('end');
+    expect(bdirDirectiveInstance.value).toEqual('rtl');
+    expect(component.dir).toEqual('rtl');
+    expect(bdirDirectiveInstance.position).toEqual('end');
   });
 });

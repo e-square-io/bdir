@@ -1,51 +1,83 @@
-import { Directive, OnInit, OnDestroy, Input, ElementRef, Renderer2, OnChanges, SimpleChanges } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
-import { Position, Direction } from './b-dir.models';
-import { BDirService } from './b-dir.service';
-import { takeUntil, startWith } from 'rxjs/operators';
+import {
+  Directive,
+  OnInit,
+  OnDestroy,
+  Input,
+  ElementRef,
+  Renderer2,
+  OnChanges,
+  SimpleChanges,
+  EventEmitter,
+  Output, SkipSelf, Optional, ChangeDetectorRef
+} from '@angular/core';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
+import { DirectionInput, Position } from './b-dir.models';
+import { BDirService, mapOppositeDir } from './b-dir.service';
+import { takeUntil, startWith, switchMap, map, tap, skipWhile } from 'rxjs/operators';
+import { Directionality, Direction } from '@angular/cdk/bidi';
+
+export const mapPositionToDirection = (value: Position, dir: Direction = 'ltr'): Direction => value === 'start' ? dir : mapOppositeDir(dir);
 
 @Directive({
-  selector: '[bdir]'
+  selector: '[bdir],[dir]',
+  providers: [{ provide: Directionality, useExisting: BDirDirective }],
+  host: { '[attr.dir]': 'value' }
 })
-export class BDirDirective implements OnInit, OnChanges, OnDestroy {
-  private destroy$: Subject<void> = new Subject();
+export class BDirDirective implements Directionality, OnInit, OnDestroy {
+  static ngAcceptInputType_bdir: DirectionInput;
+  private _destroy$: Subject<void> = new Subject();
+  private _position: Position = 'start';
+  private _dir: Direction;
+  private _value: Direction;
 
-  @Input() bdir: Position;
-
-
-  constructor(private directionService: BDirService, private element: ElementRef, private renderer: Renderer2) {}
-
-  ngOnInit(): void {
-    if (!this.bdir) {
-      this.bdir = Position.Start;
-    }
-    this.initSubscription();
+  @Input() get dir(): Direction {
+    return this._dir;
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    const bdirChanges = changes.bdir;
-    if (bdirChanges && !bdirChanges.firstChange && bdirChanges.currentValue !== bdirChanges.previousValue) {
-      this.destroy$.next();
-      this.initSubscription();
+  set dir(value: Direction) {
+    if (value !== this._dir) {
+      this.value = value;
+      this._dir = value;
     }
+  }
+
+  @Input('bdir') get position(): Position {
+    return this._position;
+  }
+
+  set position(value: Position) {
+    if (value && value !== this._position) {
+      this.value = mapPositionToDirection(value, this.directionality?.value);
+      this._position = value;
+    }
+  }
+
+  get value(): Direction {
+    return this._value;
+  }
+
+  set value(value) {
+    if (value !== this._value) {
+      this._value = value;
+      this.change.emit(value);
+    }
+  }
+
+  @Output() change: EventEmitter<Direction> = new EventEmitter<Direction>();
+
+  constructor(@SkipSelf() private directionality: Directionality) {
+  }
+
+  ngOnInit() {
+    this.directionality.change.pipe(
+      takeUntil(this._destroy$),
+      startWith(this.dir || this.directionality.value),
+      tap(dir => this.value = mapPositionToDirection(this.position, this.dir || dir))
+    ).subscribe();
   }
 
   ngOnDestroy(): void {
-    this.destroy$.next();
-  }
-
-  private initSubscription(): void {
-    this.getSubscription().pipe(
-      takeUntil(this.destroy$),
-      startWith(this.bdir === Position.Start ? this.directionService.getDir() : this.directionService.getOppositeDir())
-    ).subscribe(dir => {
-      this.renderer.setAttribute(this.element.nativeElement, 'dir', dir);
-    });
-  }
-
-  private getSubscription(): Observable<Direction> {
-    return this.bdir === Position.Start
-      ? this.directionService.dirChanges
-      : this.directionService.oppositeDirChanges;
+    this._destroy$.next();
+    this.change.complete();
   }
 }

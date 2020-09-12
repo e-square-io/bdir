@@ -1,43 +1,40 @@
-import { RTL_LANGUAGES_LIST, Direction } from '../b-dir.models';
+import { DEFAULT_LANGUAGE, RTL_LANGUAGES_LIST } from '../b-dir.models';
 import { BDirService } from '../b-dir.service';
-import { of } from 'rxjs';
-import { EventEmitter } from '@angular/core';
 
 describe('BDirService', () => {
-  const rtlLangs = RTL_LANGUAGES_LIST;
   let directionService: BDirService;
   beforeEach(() => {
-    directionService = new BDirService(rtlLangs);
+    directionService = new BDirService(RTL_LANGUAGES_LIST, DEFAULT_LANGUAGE);
     expect.hasAssertions();
   });
 
   it('should be created with default lang', () => {
-    expect(directionService.getDir()).toEqual('ltr');
+    expect(directionService.value).toEqual('ltr');
 
-    directionService = new BDirService(rtlLangs, 'he');
-    expect(directionService.getDir()).toEqual('rtl');
+    directionService = new BDirService(RTL_LANGUAGES_LIST, 'he');
+    expect(directionService.value).toEqual('rtl');
   });
 
   it('should set language', () => {
     directionService.setLang('he');
-    expect(directionService.getDir()).toEqual(Direction.rtl);
-    expect(directionService.getOppositeDir()).toEqual(Direction.ltr);
+    expect(directionService.value).toEqual('rtl');
+    expect(directionService.getOppositeDir()).toEqual('ltr');
 
     directionService.setLang('en');
-    expect(directionService.getDir()).toEqual(Direction.ltr);
-    expect(directionService.getOppositeDir()).toEqual(Direction.rtl);
+    expect(directionService.value).toEqual('ltr');
+    expect(directionService.getOppositeDir()).toEqual('rtl');
   });
 
   it('should not change direction if its already the current one', () => {
-    const spy = spyOn(directionService.dirChanges as EventEmitter<Direction>, 'emit');
+    const spy = spyOn(directionService.change, 'emit');
     directionService.setDir('ltr');
     expect(spy).not.toHaveBeenCalled();
   });
 
   it('should return opposite direction for "LTR"', done => {
-    directionService = new BDirService(rtlLangs, 'he');
+    directionService = new BDirService(RTL_LANGUAGES_LIST, 'he');
     directionService.oppositeDirChanges.subscribe(x => {
-      expect(x).toBe(Direction.rtl);
+      expect(x).toBe('rtl');
       done();
     });
     directionService.setDir('ltr');
@@ -45,7 +42,7 @@ describe('BDirService', () => {
 
   it('should return opposite direction for "RTL"', done => {
     directionService.oppositeDirChanges.subscribe(x => {
-      expect(x).toBe(Direction.ltr);
+      expect(x).toBe('ltr');
       done();
     });
     directionService.setDir('rtl');
