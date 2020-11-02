@@ -10,13 +10,22 @@ export const mapOppositeDir = (dir: Direction): Direction => dir === 'rtl' ? 'lt
 
 export const mapToOppositeDir = () => map(mapOppositeDir);
 
+/** This is required in order to override value to getter and setter without making typescript throw */
+export abstract class BiDirectionality implements Directionality {
+  abstract readonly change: EventEmitter<Direction>;
+  abstract set value(dir: Direction);
+  abstract get value(): Direction;
+  abstract ngOnDestroy(): void
+}
+
 @Injectable({
   providedIn: 'root'
 })
-export class BDirService extends Directionality {
+export class BDirService extends BiDirectionality {
   /** @deprecated use value instead */
   private currentDir: Direction;
   private _value: Direction;
+  readonly change: EventEmitter<Direction> = new EventEmitter();
 
 
   /**
@@ -41,7 +50,7 @@ export class BDirService extends Directionality {
     @Inject(DEFAULT_LANG) defaultLang: Language,
     @Optional() @Inject(DOCUMENT) doc?: any
   ) {
-    super(doc);
+    super();
 
     this.setLang(defaultLang);
   }
@@ -79,5 +88,9 @@ export class BDirService extends Directionality {
 
   private getDirByLang(lang: Language): Direction {
     return this.rtlLangs.includes(lang) ? 'rtl' : 'ltr';
+  }
+
+  ngOnDestroy(): void {
+    this.change.complete();
   }
 }
