@@ -24,8 +24,8 @@ jobs:
           npm run test:ci -- --coverage
         env:
           CI: true
-      - name: CodeCov
-        uses: codecov/codecov-action@1.2.1
+      - name: Codecov
+        uses: codecov/codecov-action@v1.2.1
         with:
           token: ${{ secrets.codecov_token }}
           directory: coverage
