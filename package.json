@@ -1,0 +1,76 @@
+{
+  "name": "@e-square/name",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "nx": "nx",
+    "start": "nx serve",
+    "build": "nx build",
+    "test": "nx test",
+    "lint": "nx workspace-lint && nx lint",
+    "e2e": "nx e2e",
+    "affected:apps": "nx affected:apps",
+    "affected:libs": "nx affected:libs",
+    "affected:build": "nx affected:build",
+    "affected:e2e": "nx affected:e2e",
+    "affected:test": "nx affected:test",
+    "affected:lint": "nx affected:lint",
+    "affected:dep-graph": "nx affected:dep-graph",
+    "affected": "nx affected",
+    "format": "nx format:write",
+    "format:write": "nx format:write",
+    "format:check": "nx format:check",
+    "update": "nx migrate latest",
+    "workspace-generator": "nx workspace-generator",
+    "dep-graph": "nx dep-graph",
+    "help": "nx help",
+    "contributors:add": "all-contributors add",
+    "commit": "git-cz",
+    "prepare": "husky install"
+  },
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-angular": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@nrwl/cli": "^12",
+    "@nrwl/eslint-plugin-nx": "^12",
+    "@nrwl/jest": "^12",
+    "@nrwl/linter": "^12",
+    "@nrwl/tao": "^12",
+    "@nrwl/workspace": "^12",
+    "@types/jest": "26.0.8",
+    "@types/node": "14.14.33",
+    "@typescript-eslint/eslint-plugin": "4.19.0",
+    "@typescript-eslint/parser": "4.19.0",
+    "all-contributors-cli": "^6.19.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "8.2.0",
+    "eslint": "7.22.0",
+    "eslint-config-prettier": "8.1.0",
+    "git-cz": "^4.7.6",
+    "husky": "^6.0.0",
+    "jest": "26.6.3",
+    "lint-staged": "^11.0.0",
+    "prettier": "2.3.0",
+    "ts-jest": "26.5.6",
+    "ts-node": "~9.1.1",
+    "typescript": "4.1.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,ts,html,component.html}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,ts}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
