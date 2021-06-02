@@ -1,16 +1,33 @@
 {
-  "npmScope": "e-square",
-  "affected": { "defaultBase": "main" },
   "implicitDependencies": {
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     ".eslintrc.json": "*"
   },
+  "affected": {
+    "defaultBase": "main"
+  },
+  "npmScope": "e-square",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "ODdlM2U2ZmUtN2FmMi00YzkzLWI1YWEtNjQ5MmRjMjY0ZDQyfHJlYWQtd3JpdGU=",
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
     }
   },
-  "projects": {},
-  "workspaceLayout": { "appsDir": "packages", "libsDir": "packages" }
+  "workspaceLayout": {
+    "appsDir": "packages",
+    "libsDir": "packages"
+  },
+  "projects": {
+    "bdir": {
+      "tags": []
+    }
+  }
 }

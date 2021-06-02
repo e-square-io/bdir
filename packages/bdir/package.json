@@ -1,0 +1,26 @@
+{
+  "name": "@e-square/bdir",
+  "version": "3.0.0",
+  "description": "A bidirectional support library for angular",
+  "homepage": "https://github.com/e-square-io/bdir#readme",
+  "keywords": [
+    "Angular",
+    "bdir",
+    "bidi",
+    "directions",
+    "rtl",
+    "ltr"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^12.0.2",
+    "@angular/core": "^12.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e-square-io/bdir.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "^2.1.0"
+  }
+}

@@ -1,5 +1,61 @@
 {
   "version": 2,
-  "projects": {},
-  "cli": { "defaultCollection": "@nrwl/workspace" }
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "generators": {
+    "@nrwl/angular:application": {
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {}
+  },
+  "projects": {
+    "bdir": {
+      "projectType": "library",
+      "root": "packages/bdir",
+      "sourceRoot": "packages/bdir/src",
+      "prefix": "e-square",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "packages/bdir/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/bdir/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "packages/bdir/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/bdir"],
+          "options": {
+            "jestConfig": "packages/bdir/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/bdir/src/**/*.ts",
+              "packages/bdir/src/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "bdir"
 }
