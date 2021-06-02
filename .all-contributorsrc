@@ -1,6 +1,6 @@
 {
-  "projectName": "test",
-  "projectOwner": "",
+  "projectName": "bdir",
+  "projectOwner": "ronnetzer",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -9,6 +9,18 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "angular",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "itayod",
+      "name": "Itay Oded",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6719615?v=4",
+      "profile": "https://github.com/itayod",
+      "contributions": [
+        "code",
+        "design",
+        "test"
+      ]
+    }
+  ],
   "contributorsPerLine": 7
 }
