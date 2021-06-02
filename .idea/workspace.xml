@@ -22,64 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2226d2b-82ad-4677-82e5-194d83af5c9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/nx-ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bdir/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bdir/jest.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bdir/ng-package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bdir/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bdir/src/lib/bdir.directive.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bdir/src/test-setup.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bdir/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bdir/tsconfig.lib.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bdir/tsconfig.lib.prod.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/bdir/tsconfig.spec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nx.json" beforeDir="false" afterPath="$PROJECT_DIR$/nx.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/.github/ISSUE_TEMPLATE/bug_report.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/.github/ISSUE_TEMPLATE/feature_request.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/.github/workflows/nodejs.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/jest.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/ng-package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/b-dir.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/b-dir.models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/lib/bdir.models.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/b-dir.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/lib/bdir.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/b-dir.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/lib/bdir.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/b-dir.tokens.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/lib/bdir.tokens.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/styles/_utils.mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/styles/_utils.mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/styles/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/styles/mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/tests/__snapshots__/mixin.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/lib/tests/__snapshots__/mixin.spec.ts.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/tests/b-dir.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/lib/tests/bdir.directive.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/tests/b-dir.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/lib/tests/bdir.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/tests/fixures/test.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/lib/tests/mixin.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/lib/tests/mixin.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/src/public-api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/tsconfig.lib.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/tsconfig.lib.prod.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/projects/bdir/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/setup-jest.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/test-config.helper.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oldrepo/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.base.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.base.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/workspace.json" afterDir="false" />
-    </list>
+    <list default="true" id="b2226d2b-82ad-4677-82e5-194d83af5c9f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -310,19 +253,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/packages/bdir/src/lib/tests/bdir.directive.spec.ts</url>
-          <line>75</line>
+          <line>73</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/packages/bdir/src/lib/tests/bdir.directive.spec.ts</url>
-          <line>76</line>
+          <line>74</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/packages/bdir/src/lib/tests/bdir.directive.spec.ts</url>
-          <line>77</line>
+          <line>75</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="16" />
         </line-breakpoint>

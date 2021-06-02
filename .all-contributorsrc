@@ -20,6 +20,19 @@
         "design",
         "test"
       ]
+    },
+    {
+      "login": "ronnetzer",
+      "name": "Ron Netzer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1116785?v=4",
+      "profile": "https://github.com/ronnetzer",
+      "contributions": [
+        "code",
+        "design",
+        "doc",
+        "maintenance",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7

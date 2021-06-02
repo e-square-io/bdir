@@ -4,7 +4,7 @@
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](CONTRIBUTING.md#commit-message-format)
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](.github/PULL_REQUEST_TEMPLATE.md)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 
 
 > A bidirectional support lib for angular
@@ -153,6 +153,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/itayod"><img src="https://avatars.githubusercontent.com/u/6719615?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Itay Oded</b></sub></a><br /><a href="https://github.com/ronnetzer/bdir/commits?author=itayod" title="Code">💻</a> <a href="#design-itayod" title="Design">🎨</a> <a href="https://github.com/ronnetzer/bdir/commits?author=itayod" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/ronnetzer"><img src="https://avatars.githubusercontent.com/u/1116785?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ron Netzer</b></sub></a><br /><a href="https://github.com/ronnetzer/bdir/commits?author=ronnetzer" title="Code">💻</a> <a href="#design-ronnetzer" title="Design">🎨</a> <a href="https://github.com/ronnetzer/bdir/commits?author=ronnetzer" title="Documentation">📖</a> <a href="#maintenance-ronnetzer" title="Maintenance">🚧</a> <a href="https://github.com/ronnetzer/bdir/commits?author=ronnetzer" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
