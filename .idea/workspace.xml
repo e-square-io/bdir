@@ -23,9 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2226d2b-82ad-4677-82e5-194d83af5c9f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/nx-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/nx-ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/bdir/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/workspace.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

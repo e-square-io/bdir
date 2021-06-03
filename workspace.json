@@ -24,6 +24,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/packages/bdir"],
           "options": {
             "project": "packages/bdir/ng-package.json"
           },
