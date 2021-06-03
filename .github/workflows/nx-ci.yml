@@ -91,7 +91,7 @@ jobs:
 
       - name: NPM publish
         run: npm publish
-        working-directory: dist/bdir
+        working-directory: bdir
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
 
