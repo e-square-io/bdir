@@ -28,8 +28,8 @@ export const coercePositionProperty = (val: PositionInput): Position =>
   providers: [{ provide: Directionality, useExisting: BDirDirective }],
 })
 export class BDirDirective implements Directionality, OnInit, OnDestroy {
-  static ngAcceptInputType_dir: DirectionInput;
-  static ngAcceptInputType_bdir: PositionInput;
+  static ngAcceptInputType_value: DirectionInput;
+  static ngAcceptInputType_position: PositionInput;
 
   private _destroy$: Subject<void> = new Subject();
 

@@ -72,6 +72,7 @@ jobs:
         uses: e-square-io/nx-github-actions/dist/packages/nx-distributed-task@v1
         id: execute
         with:
+          nxCloud: true
           target: ${{ matrix.target }}
           bucket: ${{ matrix.bucket }}
           projects: ${{ matrix.projects }}

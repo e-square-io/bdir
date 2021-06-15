@@ -23,9 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2226d2b-82ad-4677-82e5-194d83af5c9f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/nx-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/nx-ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/bdir/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/bdir/src/lib/bdir.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/lib/bdir.directive.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/bdir/src/lib/bdir.models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/lib/bdir.models.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,6 +232,7 @@
       <workItem from="1615819870471" duration="610000" />
       <workItem from="1615824471270" duration="685000" />
       <workItem from="1622568685377" duration="6092000" />
+      <workItem from="1623757401333" duration="53000" />
     </task>
     <servers />
   </component>
@@ -258,19 +260,16 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/packages/bdir/src/lib/tests/bdir.directive.spec.ts</url>
           <line>73</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/packages/bdir/src/lib/tests/bdir.directive.spec.ts</url>
           <line>74</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/packages/bdir/src/lib/tests/bdir.directive.spec.ts</url>
           <line>75</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>

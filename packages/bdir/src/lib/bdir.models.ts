@@ -5,6 +5,6 @@ export type Language = string;
 
 export type Position = 'start' | 'end';
 
-export type DirectionInput = Direction | null | undefined;
+export type DirectionInput = Direction | '' | null | undefined;
 
-export type PositionInput = Position | null | undefined;
+export type PositionInput = Position | '' | null | undefined;
