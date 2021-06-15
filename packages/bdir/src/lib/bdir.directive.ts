@@ -19,9 +19,9 @@ export const mapPositionToDirection = (
   dir: Direction = 'ltr'
 ): Direction => (value === 'start' ? dir : mapOppositeDir(dir));
 export const coerceDirectionProperty = (val: DirectionInput): Direction =>
-  val === null || val === undefined ? 'ltr' : val;
+  val === null || val === undefined || val === '' ? 'ltr' : val;
 export const coercePositionProperty = (val: PositionInput): Position =>
-  val === null || val === undefined ? 'start' : val;
+  val === null || val === undefined || val === '' ? 'start' : val;
 
 @Directive({
   selector: '[bdir],[dir]',
