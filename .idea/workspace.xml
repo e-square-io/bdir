@@ -22,7 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2226d2b-82ad-4677-82e5-194d83af5c9f" name="Default Changelist" comment="" />
+    <list default="true" id="b2226d2b-82ad-4677-82e5-194d83af5c9f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/bdir/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/bdir/src/lib/bdir.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/bdir/src/lib/bdir.directive.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -228,6 +232,7 @@
       <workItem from="1615824471270" duration="685000" />
       <workItem from="1622568685377" duration="6092000" />
       <workItem from="1623757401333" duration="158000" />
+      <workItem from="1623773295067" duration="953000" />
     </task>
     <servers />
   </component>
