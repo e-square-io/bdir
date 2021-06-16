@@ -1,6 +1,6 @@
 {
   "name": "@e-square/bdir",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "A bidirectional support library for angular",
   "homepage": "https://github.com/e-square-io/bdir#readme",
   "keywords": [
