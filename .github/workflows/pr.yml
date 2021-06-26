@@ -1,8 +1,6 @@
-name: NX CI
+name: PR Workflow
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -39,7 +37,7 @@ jobs:
         uses: e-square-io/nx-github-actions/dist/packages/nx-affected-matrix@v1
         id: affected
         with:
-          targets: 'test,build'
+          targets: 'lint,test,build'
 
   distributed-task:
     name: Run ${{ matrix.target }} ${{ matrix.bucket }}
@@ -77,24 +75,18 @@ jobs:
           bucket: ${{ matrix.bucket }}
           projects: ${{ matrix.projects }}
 
-  release:
-    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
-    needs: [distributed-task]
+  coverage:
+    name: Publish coverage
     runs-on: ubuntu-latest
+    needs: [distributed-task]
     steps:
-      - uses: actions/download-artifact@v2
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
         with:
-          name: build
+          name: test
 
-      - uses: actions/setup-node@v2
+      - uses: codecov/codecov-action@v1
         with:
-          node-version: 12
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: NPM publish
-        run: npm publish
-        working-directory: dist/packages/bdir
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+          directory: ./test
 
 
