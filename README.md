@@ -1,10 +1,13 @@
 # @e-square/bdir
 
-[![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg?style=flat-square)](LICENSE)
-[![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](CONTRIBUTING.md#commit-message-format)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/e-square-io/bdir/Main%20Workflow?&style=flat-square)](https://github.com/e-square-io/bdir/actions/workflows/main.yml)
+[![npm (scoped)](https://img.shields.io/npm/v/@e-square/bdir?style=flat-square)](https://www.npmjs.com/package/@e-square/bdir)
+[![Codecov](https://img.shields.io/codecov/c/github/e-square-io/bdir?logo=codecov&style=flat-square&token=jkPC3zuNHY)](https://app.codecov.io/gh/e-square-io/bdir/)
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](.github/PULL_REQUEST_TEMPLATE.md)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](CONTRIBUTING.md#commit-message-format)
+[![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg?style=flat-square)](LICENSE)
 
 
 > A bidirectional support lib for angular
